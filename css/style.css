@@ -250,7 +250,7 @@ header {
 
 .intro__img {
     box-shadow: var(--bs);
-    height: 400px;
+    max-width: 300px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -475,7 +475,7 @@ header {
         width: 100%;
         left: 0;
         position: absolute;
-        top: -1.4em;
+        top: -2.8em;
         z-index: 2;
     }
     
