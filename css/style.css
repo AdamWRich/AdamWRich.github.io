@@ -13,9 +13,10 @@
     --fw-reg: 300;
     --fw-bold:900;
 
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #c67575;
+    --clr-light:#D1DDED;
+    --clr-dark: #16202B;
+    --clr-accent: #82DB69;
+    --clr-accent2: #DBA95E;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -48,7 +49,6 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
-    padding: 2em;
 }
 
 section {
@@ -139,8 +139,9 @@ header {
 .logo {
     position: relative;
     max-width: 200px;
-    margin-bottom: -8em;
-    margin-left: 3em
+    margin-bottom: -4em;
+    margin-top: -2em;
+    /* border: 2px solid red; */
 }
 
 .nav {
@@ -149,12 +150,28 @@ header {
     color: var(--clr-light);
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 80%;
     right: 0;
     z-index: 100;
 
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+@media (min-width: 400px) {
+    .nav {
+        position: fixed;
+        background: var(--clr-dark);
+        color: var(--clr-light);
+        top: 0;
+        bottom: 0;
+        left: 0%;
+        right: 0;
+        z-index: 100;
+    
+        transform: translateX(100%);
+        transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    }
 }
 
 .nav__list {
@@ -220,7 +237,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-accent);
+    background: var(--clr-accent2);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -255,6 +272,10 @@ header {
     margin-left: auto;
 }
 
+.section__subtitle--intro {
+    box-shadow: 9px 10px 10px 2px rgba(0,0,0,0.58)
+}
+
 @media (min-width: 600px) {
     .intro {
         margin-left: auto;
@@ -286,12 +307,13 @@ header {
         position: relative;
         left: -1.5em;
         width: calc(100% + 1.5em);
+        box-shadow: 9px 10px 10px 2px rgba(0,0,0,0.58)
     }
 }
 
-/* Languages */
+/* My Tools */
 
-.my-languages {
+.my-tools {
     /* border-top: 5px solid red; */
     position: relative;
     color: var(--clr-light);
@@ -299,9 +321,9 @@ header {
     padding-top: 2em;
 }
 
-.my-languages::before {
+.my-tools::before {
     content: '';
-    background-image:  url(../img/services.jpg);
+    background-image:  url(../img/keyboard.jpg);
     background-color: var(--clr-dark);
     background-blend-mode: multiply;
     background-size: cover;
@@ -313,7 +335,7 @@ header {
     z-index: -1;
 }
 
-.my-languages::after {
+.my-tools::after {
     content: '';
     background-color: var(--clr-light);
     height: 10%;
@@ -324,62 +346,99 @@ header {
     z-index: 2;
 }
 
-.my-languages::after {
+.my-tools::after {
     clip-path: polygon(100% 0, 100% 100%, 100% 100%, 50% 30%, 0% 100%, 0 100%, 0 0);
 }
 
 
 
-.section__title--languages {
+.section__title--tools {
     color: var(--clr-accent);
     position:relative;
     z-index: 10;
 }
 
-.section__title--languages::after {
+.section__title--tools::after {
     content: '';
     display: block;
     width: 2em;
-    height: 1px;
+    height: 5px;
     margin: .5em auto;
     background: var(--clr-light);
     opacity: .25;
 }
 
-.languages {
-    margin-bottom: 2em;
+.tool__section {
+    margin-bottom: 3em;
+    display: grid;
+    grid-template-columns:50% 50%;
+    row-gap: 3em;
 }
 
-.language {
-    max-width: 500px;
-    margin: 0 auto;
+.tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.tool h3 {
+    color: var(--clr-accent2);
+}
+
+.tool img {
+    max-height: 3em;
+    filter: invert(1);
+}
+
+#finale {
+    filter: none;
 }
 
 @media (min-width: 600px) {
-    .languages {
-        display: flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+    .tool__section {
+        margin-bottom: 3em;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        row-gap: 3em;
     }
 
-    .language + .language {
-        margin-left: 2em;
+    .tool {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
     }
-    .my-languages::before {
+
+    .tool h3 {
+        color: var(--clr-light)
+    }
+
+    .tool img {
+        max-height: 3em;
+        filter: invert(1);
+    }
+
+    #finale {
+        filter: none;
+    }
+
+    
+    .my-tools::before {
         content: '';
-        background-image:  url(../img/services.jpg);
+        background-image:  url(../img/keyboard.jpg);
         background-color: var(--clr-dark);
         background-blend-mode: multiply;
         background-size: cover;
         width: 100%;
         height: 110%;
+        background-attachment: fixed;
         position: absolute;
         left: 0;
         top: -3em;
         z-index: -1;
     }
-    .my-languages::after {
+    .my-tools::after {
         content: '';
         background-color: var(--clr-light);
         height: 3em;
@@ -390,8 +449,8 @@ header {
         z-index: 2;
     }
     
-    .my-languages::after {
-        clip-path: polygon(100% 0, 100% 100%, 75% 100%, 50% 50%, 25% 100%, 0 100%, 0 0);
+    .my-tools::after {
+        clip-path: polygon(100% 0, 100% 100%, 70% 100%, 50% 50%, 30% 100%, 0 100%, 0 0);
     }
 }
 
@@ -429,11 +488,15 @@ header {
 
 .about-me img {
     box-shadow: var(--bs);
+    max-height: 300px;
+    margin-right: auto;
+    margin-left: auto;
     z-index: 5;
 }
 
 .section__subtitle--about {
     text-align: center;
+    box-shadow: 9px 10px 10px 2px rgba(0,0,0,0.58)
 }
 
 @media (min-width: 600px) {
@@ -463,6 +526,8 @@ header {
         width: calc(100% + 2em);
         padding-left: 1em;
         padding-right: calc(150px + 4em);
+        box-shadow: 9px 10px 10px 2px rgba(0,0,0,0.58)
+
     }
     .section__title--about {
         grid-area: title;
@@ -470,17 +535,17 @@ header {
     }
     .about-me::after {
         content: '';
-        background-color: var(--clr-light);
+        background-color:var(--clr-light);
         height: 3em;
         width: 100%;
         left: 0;
         position: absolute;
-        top: -2.8em;
+        top: -2.5em;
         z-index: 2;
     }
     
     .about-me::after {
-        clip-path: polygon(50% 10%, 75% 50%, 100% 50%, 100% 100%, 0 100%, 0 50%, 25% 50%);
+        clip-path: polygon(50% 0%, 75% 50%, 100% 50%, 100% 100%, 0 100%, 0 50%, 25% 50%);
     }
 }
 
@@ -490,9 +555,9 @@ header {
 .my-work {
     position: relative;
     background-color: var(--clr-dark);
-    background-image: url(../img/work.jpg);
+    background-image: url(../img/chalkboard.jpg);
     background-size: cover;
-    background-blend-mode: multiply;
+    background-blend-mode: darken;
     color: var(--clr-light);
     text-align: center;
 }

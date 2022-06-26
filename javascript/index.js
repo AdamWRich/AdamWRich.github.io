@@ -13,7 +13,7 @@ navLinks.forEach(link => {
 
 
 var myImage = document.getElementById("about__img");
-var imageArray = ["img/bri.jpeg", "img/fam.jpeg"]
+var imageArray = ["img/family/bri.jpeg", "img/family/fam.jpeg"]
 
 var imageIndex = 0;
 
