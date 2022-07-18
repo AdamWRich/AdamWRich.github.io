@@ -29,6 +29,6 @@ setInterval(changeImage,3000);
 
 
 // Video playback
-var vid = document.getElementById('nvp_gameplay');
-vid.playbackRate = 1;
+var vid = document.getElementsByClassName('video_prev');
+vid.playbackRate = 2.0;
 
