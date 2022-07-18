@@ -26,3 +26,9 @@ function changeImage() {
 }
 
 setInterval(changeImage,3000);
+
+
+// Video playback
+var vid = document.getElementById('nvp_gameplay');
+vid.playbackRate = 1;
+
