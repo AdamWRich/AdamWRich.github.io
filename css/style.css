@@ -710,7 +710,6 @@ header {
 
 @media (max-width: 600px) {
     .portfolio__header-img {
-        /* right: 3em; */
         max-width: 350px;
     }
     .portfolio-item-individual {
@@ -736,5 +735,9 @@ header {
         bottom: 1em;
         max-width: 200px;
         right: 0;
+    }
+    #nvp_header {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
